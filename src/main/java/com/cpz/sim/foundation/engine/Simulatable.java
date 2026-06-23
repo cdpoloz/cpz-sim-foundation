@@ -1,7 +1,14 @@
 package com.cpz.sim.foundation.engine;
 
+import com.cpz.sim.foundation.time.SimulationTick;
+
 /**
  * @author CPZ
  */
-public class Simulatable {
+public interface Simulatable {
+
+    void update(SimulationTick tick);
+
+    default void reset() {
+    }
 }
