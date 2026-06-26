@@ -20,6 +20,10 @@ public record SimulationTick(
             throw new IllegalArgumentException("deltaTime must be positive");
     }
 
+    public double elapsedSeconds() {
+        return elapsedTime.toSeconds() + elapsedTime.toNanosPart() / 1_000_000_000.0;
+    }
+
     public double deltaSeconds() {
         return deltaTime.toSeconds() + deltaTime.toNanosPart() / 1_000_000_000.0;
     }
